@@ -1,0 +1,18 @@
+{
+    "name": "dkart-token-sale",
+    "description": "DKart Token Sale ICO",
+    "main": "truffle.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "dev": "lite-server"
+    },
+    "author": "Saurabh",
+    "devDependencies": {
+        "lite-server": "^2.3.0"
+    },
+    "dependencies": {
+        "truffle-hdwallet-provider": "0.0.6"
+    }
+}

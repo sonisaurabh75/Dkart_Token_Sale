@@ -1,0 +1,597 @@
+$ truffle compile
+
+// ROPSTEN TEST NETWORK
+truffle migrate --network ropsten
+
+
+
+$ truffle migrate --reset
+        Compiling ./contracts/DkartToken.sol...
+        Writing artifacts to ./build/contracts
+
+        Using network 'development'.
+
+        Running migration: 1_initial_migration.js
+        Replacing Migrations...
+        ... 0x7cd0adcfa41b615c8dd6d5bd5fd80ad3878047d21ea43456670fad6d7346e807
+        Migrations: 0xebf3c3b116fc39b05a4b6e24acb3c7c5e604d07b
+        Saving successful migration to network...
+        ... 0x187fc752e3b4bdf85c1767452801feddf6cba731dfcf4da186627037bb25153d
+        Saving artifacts...
+        Running migration: 2_deploy_contracts.js
+        Replacing DkartToken...
+        ... 0xe66434624056357034636a1e0352de15bcef9c17e8e910048c59539ccfb42ab7
+        DkartToken: 0xfa21e79ca2dfb3ab15469796069622903919159c
+        Saving successful migration to network...
+        ... 0x3291d642aa5b088516785fffec40f37f0481f211d379e86a32ef6e3f802cf2e1
+        Saving artifacts...
+
+
+
+$ truffle console
+
+        truffle(development)> DkartToken.deployed().then(function(instance){tokenInstance=instance;})
+        undefined
+        truffle(development)> tokenInstance
+        TruffleContract {
+        constructor: 
+        { [Function: TruffleContract]
+            _static_methods: 
+            { setProvider: [Function: setProvider],
+                new: [Function: new],
+                at: [Function: at],
+                deployed: [Function: deployed],
+                defaults: [Function: defaults],
+                hasNetwork: [Function: hasNetwork],
+                isDeployed: [Function: isDeployed],
+                detectNetwork: [Function: detectNetwork],
+                setNetwork: [Function: setNetwork],
+                resetAddress: [Function: resetAddress],
+                link: [Function: link],
+                clone: [Function: clone],
+                addProp: [Function: addProp],
+                toJSON: [Function: toJSON] },
+            _properties: 
+            { contract_name: [Object],
+                contractName: [Object],
+                abi: [Object],
+                network: [Function: network],
+                networks: [Function: networks],
+                address: [Object],
+                transactionHash: [Object],
+                links: [Function: links],
+                events: [Function: events],
+                binary: [Function: binary],
+                deployedBinary: [Function: deployedBinary],
+                unlinked_binary: [Object],
+                bytecode: [Object],
+                deployedBytecode: [Object],
+                sourceMap: [Object],
+                deployedSourceMap: [Object],
+                source: [Object],
+                sourcePath: [Object],
+                legacyAST: [Object],
+                ast: [Object],
+                compiler: [Object],
+                schema_version: [Function: schema_version],
+                schemaVersion: [Function: schemaVersion],
+                updated_at: [Function: updated_at],
+                updatedAt: [Function: updatedAt] },
+            _property_values: {},
+            _json: 
+            { contractName: 'DkartToken',
+                abi: [Array],
+                bytecode: '0x60806040526040805190810160405280600581526020017f446b6172740000000000000000000000000000000000000000000000000000008152506000908051906020019061004f92919061011c565b506040805190810160405280600381526020017f444b5400000000000000000000000000000000000000000000000000000000008152506001908051906020019061009b92919061011c565b503480156100a857600080fd5b50604051602080610c308339810180604052810190808051906020019092919050505080600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555080600281905550506101c1565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061015d57805160ff191683800117855561018b565b8280016001018555821561018b579182015b8281111561018a57825182559160200191906001019061016f565b5b509050610198919061019c565b5090565b6101be91905b808211156101ba5760008160009055506001016101a2565b5090565b90565b610a60806101d06000396000f30060806040526004361061008e576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306fdde0314610093578063095ea7b31461012357806323b872dd1461018857806370a082311461020d57806395d89b4114610264578063a9059cbb146102f4578063dd62ed3e14610359578063f635bbb2146103d0575b600080fd5b34801561009f57600080fd5b506100a86103fb565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100e85780820151818401526020810190506100cd565b50505050905090810190601f1680156101155780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561012f57600080fd5b5061016e600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610499565b604051808215151515815260200191505060405180910390f35b34801561019457600080fd5b506101f3600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061058b565b604051808215151515815260200191505060405180910390f35b34801561021957600080fd5b5061024e600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506107fa565b6040518082815260200191505060405180910390f35b34801561027057600080fd5b50610279610812565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156102b957808201518184015260208101905061029e565b50505050905090810190601f1680156102e65780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561030057600080fd5b5061033f600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506108b0565b604051808215151515815260200191505060405180910390f35b34801561036557600080fd5b506103ba600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610a09565b6040518082815260200191505060405180910390f35b3480156103dc57600080fd5b506103e5610a2e565b6040518082815260200191505060405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104915780601f1061046657610100808354040283529160200191610491565b820191906000526020600020905b81548152906001019060200180831161047457829003601f168201915b505050505081565b600081600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925846040518082815260200191505060405180910390a36001905092915050565b6000600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205482111515156105db57600080fd5b600460008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054821115151561066657600080fd5b81600360008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555081600460008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055508273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3600190509392505050565b60036020528060005260406000206000915090505481565b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156108a85780601f1061087d576101008083540402835291602001916108a8565b820191906000526020600020905b81548152906001019060200180831161088b57829003601f168201915b505050505081565b600081600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015151561090057600080fd5b81600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a36001905092915050565b6004602052816000526040600020602052806000526040600020600091509150505481565b600254815600a165627a7a7230582060983449b93ebd2662fea90a98c921f9e534e6af0ea11f07540b420574cfa7310029',
+                deployedBytecode: '0x60806040526004361061008e576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306fdde0314610093578063095ea7b31461012357806323b872dd1461018857806370a082311461020d57806395d89b4114610264578063a9059cbb146102f4578063dd62ed3e14610359578063f635bbb2146103d0575b600080fd5b34801561009f57600080fd5b506100a86103fb565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100e85780820151818401526020810190506100cd565b50505050905090810190601f1680156101155780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561012f57600080fd5b5061016e600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610499565b604051808215151515815260200191505060405180910390f35b34801561019457600080fd5b506101f3600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061058b565b604051808215151515815260200191505060405180910390f35b34801561021957600080fd5b5061024e600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506107fa565b6040518082815260200191505060405180910390f35b34801561027057600080fd5b50610279610812565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156102b957808201518184015260208101905061029e565b50505050905090810190601f1680156102e65780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561030057600080fd5b5061033f600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506108b0565b604051808215151515815260200191505060405180910390f35b34801561036557600080fd5b506103ba600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610a09565b6040518082815260200191505060405180910390f35b3480156103dc57600080fd5b506103e5610a2e565b6040518082815260200191505060405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104915780601f1061046657610100808354040283529160200191610491565b820191906000526020600020905b81548152906001019060200180831161047457829003601f168201915b505050505081565b600081600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925846040518082815260200191505060405180910390a36001905092915050565b6000600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205482111515156105db57600080fd5b600460008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054821115151561066657600080fd5b81600360008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555081600460008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055508273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3600190509392505050565b60036020528060005260406000206000915090505481565b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156108a85780601f1061087d576101008083540402835291602001916108a8565b820191906000526020600020905b81548152906001019060200180831161088b57829003601f168201915b505050505081565b600081600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015151561090057600080fd5b81600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a36001905092915050565b6004602052816000526040600020602052806000526040600020600091509150505481565b600254815600a165627a7a7230582060983449b93ebd2662fea90a98c921f9e534e6af0ea11f07540b420574cfa7310029',
+                sourceMap: '26:1442:0:-;;;52:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;84;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;434:137;8:9:-1;5:2;;;30:1;27;20:12;5:2;434:137:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;511:14;487:9;:21;497:10;487:21;;;;;;;;;;;;;;;:38;;;;550:14;535:12;:29;;;;434:137;26:1442;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;',
+                deployedSourceMap: '26:1442:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;52:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;52:26:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;52:26:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;859:207;;8:9:-1;5:2;;;30:1;27;20:12;5:2;859:207:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1071:394;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1071:394:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;313:44;;8:9:-1;5:2;;;30:1;27;20:12;5:2;313:44:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;84:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;84:26:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;84:26:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;577:276;;8:9:-1;5:2;;;30:1;27;20:12;5:2;577:276:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;363:64;;8:9:-1;5:2;;;30:1;27;20:12;5:2;363:64:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;116:27;;8:9:-1;5:2;;;30:1;27;20:12;5:2;116:27:0;;;;;;;;;;;;;;;;;;;;;;;52:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;859:207::-;924:12;980:6;947:9;:21;957:10;947:21;;;;;;;;;;;;;;;:31;969:8;947:31;;;;;;;;;;;;;;;:39;;;;1021:8;1001:36;;1010:10;1001:36;;;1030:6;1001:36;;;;;;;;;;;;;;;;;;1055:4;1048:11;;859:207;;;;:::o;1071:394::-;1150:12;1191:9;:16;1201:5;1191:16;;;;;;;;;;;;;;;;1181:6;:26;;1173:35;;;;;;;;1236:9;:16;1246:5;1236:16;;;;;;;;;;;;;;;:28;1253:10;1236:28;;;;;;;;;;;;;;;;1226:6;:38;;1218:47;;;;;;;;1296:6;1276:9;:16;1286:5;1276:16;;;;;;;;;;;;;;;;:26;;;;;;;;;;;1330:6;1312:9;:14;1322:3;1312:14;;;;;;;;;;;;;;;;:24;;;;;;;;;;;1379:6;1347:9;:16;1357:5;1347:16;;;;;;;;;;;;;;;:28;1364:10;1347:28;;;;;;;;;;;;;;;;:38;;;;;;;;;;;1416:3;1401:26;;1410:5;1401:26;;;1420:6;1401:26;;;;;;;;;;;;;;;;;;1453:4;1446:11;;1071:394;;;;;:::o;313:44::-;;;;;;;;;;;;;;;;;:::o;84:26::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;577:276::-;638:12;694:6;669:9;:21;679:10;669:21;;;;;;;;;;;;;;;;:31;;661:40;;;;;;;;737:6;712:9;:21;722:10;712:21;;;;;;;;;;;;;;;;:31;;;;;;;;;;;771:6;753:9;:14;763:3;753:14;;;;;;;;;;;;;;;;:24;;;;;;;;;;;813:3;793:31;;802:10;793:31;;;817:6;793:31;;;;;;;;;;;;;;;;;;842:4;835:11;;577:276;;;;:::o;363:64::-;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;116:27::-;;;;:::o',
+                source: 'pragma solidity ^0.4.23;\n\ncontract DkartToken{\n\n    string public name="Dkart";\n    string public symbol="DKT";\n    uint256 public total_Tokens;\n\n    event Transfer(address indexed _from,address indexed _to,uint256 _value);\n    event Approval(address indexed _owner,address indexed _spender,uint256 _value);\n\n    mapping(address => uint256) public balanceOf;\n    mapping(address => mapping(address => uint256)) public allowance;\n\n    constructor(uint256 _initialTokens) public {\n        balanceOf[msg.sender] = _initialTokens;\n        total_Tokens = _initialTokens;\n    }\n\n    function transfer(address _to,uint256 _value) public returns(bool success){\n        require(balanceOf[msg.sender] >= _value);\n\n        balanceOf[msg.sender] -= _value;\n        balanceOf[_to] += _value;\n\n        emit Transfer(msg.sender,_to,_value);\n\n        return true;\n    }\n\n    function approve(address _spender,uint256 _value) public returns(bool success){\n        allowance[msg.sender][_spender]= _value;\n        emit Approval(msg.sender,_spender,_value);\n\n        return true;\n    }\n    function transferFrom(address _from,address _to,uint256 _value) public returns(bool success){\n        require(_value <= balanceOf[_from]);\n        require(_value <= allowance[_from][msg.sender]);\n\n        balanceOf[_from] -= _value;\n        balanceOf[_to] += _value;\n\n        allowance[_from][msg.sender] -= _value;\n\n        emit Transfer(_from,_to,_value);\n        \n        return true;\n\n    }\n\n}',
+                sourcePath: '/Users/saurabhsoni/Desktop/hellotoken/contracts/DkartToken.sol',
+                ast: [Object],
+                legacyAST: [Object],
+                compiler: [Object],
+                networks: [Object],
+                schemaVersion: '2.0.1',
+                updatedAt: '2018-06-28T13:31:42.516Z' },
+            setProvider: [Function: bound setProvider],
+            new: [Function: bound new],
+            at: [Function: bound at],
+            deployed: [Function: bound deployed],
+            defaults: [Function: bound defaults],
+            hasNetwork: [Function: bound hasNetwork],
+            isDeployed: [Function: bound isDeployed],
+            detectNetwork: [Function: bound detectNetwork],
+            setNetwork: [Function: bound setNetwork],
+            resetAddress: [Function: bound resetAddress],
+            link: [Function: bound link],
+            clone: [Function: bound clone],
+            addProp: [Function: bound addProp],
+            toJSON: [Function: bound toJSON],
+            web3: 
+            Web3 {
+                _requestManager: [Object],
+                currentProvider: [Object],
+                eth: [Object],
+                db: [Object],
+                shh: [Object],
+                net: [Object],
+                personal: [Object],
+                bzz: [Object],
+                settings: [Object],
+                version: [Object],
+                providers: [Object],
+                _extend: [Object] },
+            class_defaults: 
+            { from: '0x627306090abab3a6e1400e9345bc60c78a8bef57',
+                gas: 6721975,
+                gasPrice: 100000000000 },
+            currentProvider: 
+            HttpProvider {
+                host: 'http://127.0.0.1:7545',
+                timeout: 0,
+                user: undefined,
+                password: undefined,
+                headers: undefined,
+                send: [Function],
+                sendAsync: [Function],
+                _alreadyWrapped: true },
+            network_id: '5777' },
+        abi: 
+        [ { constant: true,
+            inputs: [],
+            name: 'name',
+            outputs: [Array],
+            payable: false,
+            stateMutability: 'view',
+            type: 'function' },
+            { constant: true,
+            inputs: [Array],
+            name: 'balanceOf',
+            outputs: [Array],
+            payable: false,
+            stateMutability: 'view',
+            type: 'function' },
+            { constant: true,
+            inputs: [],
+            name: 'symbol',
+            outputs: [Array],
+            payable: false,
+            stateMutability: 'view',
+            type: 'function' },
+            { constant: true,
+            inputs: [Array],
+            name: 'allowance',
+            outputs: [Array],
+            payable: false,
+            stateMutability: 'view',
+            type: 'function' },
+            { constant: true,
+            inputs: [],
+            name: 'total_Tokens',
+            outputs: [Array],
+            payable: false,
+            stateMutability: 'view',
+            type: 'function' },
+            { inputs: [Array],
+            payable: false,
+            stateMutability: 'nonpayable',
+            type: 'constructor' },
+            { anonymous: false,
+            inputs: [Array],
+            name: 'Transfer',
+            type: 'event' },
+            { anonymous: false,
+            inputs: [Array],
+            name: 'Approval',
+            type: 'event' },
+            { constant: false,
+            inputs: [Array],
+            name: 'transfer',
+            outputs: [Array],
+            payable: false,
+            stateMutability: 'nonpayable',
+            type: 'function' },
+            { constant: false,
+            inputs: [Array],
+            name: 'approve',
+            outputs: [Array],
+            payable: false,
+            stateMutability: 'nonpayable',
+            type: 'function' },
+            { constant: false,
+            inputs: [Array],
+            name: 'transferFrom',
+            outputs: [Array],
+            payable: false,
+            stateMutability: 'nonpayable',
+            type: 'function' } ],
+        contract: 
+        Contract {
+            _eth: 
+            Eth {
+                _requestManager: [Object],
+                getBalance: [Object],
+                getStorageAt: [Object],
+                getCode: [Object],
+                getBlock: [Object],
+                getUncle: [Object],
+                getCompilers: [Object],
+                getBlockTransactionCount: [Object],
+                getBlockUncleCount: [Object],
+                getTransaction: [Object],
+                getTransactionFromBlock: [Object],
+                getTransactionReceipt: [Object],
+                getTransactionCount: [Object],
+                call: [Object],
+                estimateGas: [Object],
+                sendRawTransaction: [Object],
+                signTransaction: [Object],
+                sendTransaction: [Object],
+                sign: [Object],
+                compile: [Object],
+                submitWork: [Object],
+                getWork: [Object],
+                coinbase: [Getter],
+                getCoinbase: [Object],
+                mining: [Getter],
+                getMining: [Object],
+                hashrate: [Getter],
+                getHashrate: [Object],
+                syncing: [Getter],
+                getSyncing: [Object],
+                gasPrice: [Getter],
+                getGasPrice: [Object],
+                accounts: [Getter],
+                getAccounts: [Object],
+                blockNumber: [Getter],
+                getBlockNumber: [Object],
+                protocolVersion: [Getter],
+                getProtocolVersion: [Object],
+                iban: [Object],
+                sendIBANTransaction: [Function: bound transfer] },
+            transactionHash: null,
+            address: '0xfa21e79ca2dfb3ab15469796069622903919159c',
+            abi: 
+            [ [Object],
+                [Object],
+                [Object],
+                [Object],
+                [Object],
+                [Object],
+                [Object],
+                [Object],
+                [Object],
+                [Object],
+                [Object] ],
+            name: 
+            { [Function: bound ]
+                request: [Function: bound ],
+                call: [Function: bound ],
+                sendTransaction: [Function: bound ],
+                estimateGas: [Function: bound ],
+                getData: [Function: bound ],
+                '': [Circular] },
+            balanceOf: 
+            { [Function: bound ]
+                request: [Function: bound ],
+                call: [Function: bound ],
+                sendTransaction: [Function: bound ],
+                estimateGas: [Function: bound ],
+                getData: [Function: bound ],
+                address: [Circular] },
+            symbol: 
+            { [Function: bound ]
+                request: [Function: bound ],
+                call: [Function: bound ],
+                sendTransaction: [Function: bound ],
+                estimateGas: [Function: bound ],
+                getData: [Function: bound ],
+                '': [Circular] },
+            allowance: 
+            { [Function: bound ]
+                request: [Function: bound ],
+                call: [Function: bound ],
+                sendTransaction: [Function: bound ],
+                estimateGas: [Function: bound ],
+                getData: [Function: bound ],
+                'address,address': [Circular] },
+            total_Tokens: 
+            { [Function: bound ]
+                request: [Function: bound ],
+                call: [Function: bound ],
+                sendTransaction: [Function: bound ],
+                estimateGas: [Function: bound ],
+                getData: [Function: bound ],
+                '': [Circular] },
+            transfer: 
+            { [Function: bound ]
+                request: [Function: bound ],
+                call: [Function: bound ],
+                sendTransaction: [Function: bound ],
+                estimateGas: [Function: bound ],
+                getData: [Function: bound ],
+                'address,uint256': [Circular] },
+            approve: 
+            { [Function: bound ]
+                request: [Function: bound ],
+                call: [Function: bound ],
+                sendTransaction: [Function: bound ],
+                estimateGas: [Function: bound ],
+                getData: [Function: bound ],
+                'address,uint256': [Circular] },
+            transferFrom: 
+            { [Function: bound ]
+                request: [Function: bound ],
+                call: [Function: bound ],
+                sendTransaction: [Function: bound ],
+                estimateGas: [Function: bound ],
+                getData: [Function: bound ],
+                'address,address,uint256': [Circular] },
+            allEvents: [Function: bound ],
+            Transfer: { [Function: bound ] 'address,address,uint256': [Function: bound ] },
+            Approval: { [Function: bound ] 'address,address,uint256': [Function: bound ] } },
+        name: 
+        { [Function]
+            call: [Function],
+            sendTransaction: [Function],
+            request: [Function: bound ],
+            estimateGas: [Function] },
+        balanceOf: 
+        { [Function]
+            call: [Function],
+            sendTransaction: [Function],
+            request: [Function: bound ],
+            estimateGas: [Function] },
+        symbol: 
+        { [Function]
+            call: [Function],
+            sendTransaction: [Function],
+            request: [Function: bound ],
+            estimateGas: [Function] },
+        allowance: 
+        { [Function]
+            call: [Function],
+            sendTransaction: [Function],
+            request: [Function: bound ],
+            estimateGas: [Function] },
+        total_Tokens: 
+        { [Function]
+            call: [Function],
+            sendTransaction: [Function],
+            request: [Function: bound ],
+            estimateGas: [Function] },
+        Transfer: { [Function: bound ] 'address,address,uint256': [Function: bound ] },
+        Approval: { [Function: bound ] 'address,address,uint256': [Function: bound ] },
+        transfer: 
+        { [Function]
+            call: [Function],
+            sendTransaction: [Function],
+            request: [Function: bound ],
+            estimateGas: [Function] },
+        approve: 
+        { [Function]
+            call: [Function],
+            sendTransaction: [Function],
+            request: [Function: bound ],
+            estimateGas: [Function] },
+        transferFrom: 
+        { [Function]
+            call: [Function],
+            sendTransaction: [Function],
+            request: [Function: bound ],
+            estimateGas: [Function] },
+        sendTransaction: [Function],
+        send: [Function],
+        allEvents: [Function: bound ],
+        address: '0xfa21e79ca2dfb3ab15469796069622903919159c',
+        transactionHash: null }
+
+
+
+        truffle(development)> tokenInstance.name();
+        'Dkart'
+
+
+        truffle(development)> tokenInstance.symbol();
+        'DKT'
+
+
+        truffle(development)> tokenInstance.total_Tokens();
+        BigNumber { s: 1, e: 6, c: [ 1000000 ] }
+
+
+        truffle(development)> tokenInstance.total_Tokens().then(function(s){supply=s;})
+        undefined
+
+
+        truffle(development)> supply
+
+
+        BigNumber { s: 1, e: 6, c: [ 1000000 ] }
+        truffle(development)> supply.toNumber()
+        1000000
+
+
+        truffle(development)> admin=web3.eth.accounts[0];
+        '0x627306090abab3a6e1400e9345bc60c78a8bef57'
+
+
+        truffle(development)> tokenInstance.balanceOf(admin)
+        BigNumber { s: 1, e: 6, c: [ 1000000 ] }
+
+
+        truffle(development)> tokenInstance.balanceOf(admin).then(function(b){adminb=b;})
+        undefined
+
+
+        truffle(development)> adminb
+        BigNumber { s: 1, e: 6, c: [ 1000000 ] }
+
+
+        truffle(development)> receiver=web3.eth.accounts[1]
+        '0xf17f52151ebef6c7334fad080c5704d77216b732'
+
+
+        truffle(development)> tokenInstance.transfer(receiver,1,{from:admin})
+        { tx: '0xfde4616ae3894cf7c7de5e4f639595bc2717f0b98149f899144da9b01f99b533',
+        receipt: 
+        { transactionHash: '0xfde4616ae3894cf7c7de5e4f639595bc2717f0b98149f899144da9b01f99b533',
+            transactionIndex: 0,
+            blockHash: '0xac280a826ccdf25ddc81608e86e9c4ec4156fcfb54e50514a652dac3722e5e0d',
+            blockNumber: 163,
+            gasUsed: 51086,
+            cumulativeGasUsed: 51086,
+            contractAddress: null,
+            logs: [ [Object] ],
+            status: '0x01',
+            logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000010000008000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000010000000000000000000010000000000000000000000000000000000000000010000000002000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000010000000000000000000000000000001000000000000000000000000000000100000000000000000000000000000000000000' },
+        logs: 
+        [ { logIndex: 0,
+            transactionIndex: 0,
+            transactionHash: '0xfde4616ae3894cf7c7de5e4f639595bc2717f0b98149f899144da9b01f99b533',
+            blockHash: '0xac280a826ccdf25ddc81608e86e9c4ec4156fcfb54e50514a652dac3722e5e0d',
+            blockNumber: 163,
+            address: '0xfa21e79ca2dfb3ab15469796069622903919159c',
+            type: 'mined',
+            event: 'Transfer',
+            args: [Object] } ] }
+
+
+        truffle(development)> tokenInstance.balanceOf(admin)
+        BigNumber { s: 1, e: 5, c: [ 999999 ] }
+
+
+        truffle(development)> tokenInstance.approve(web3.eth.accounts[1],100)
+        { tx: '0xbbfe9a68a10c03d02ec7c45f41305f10c00b1207321a6026135e7eced6ef7a9b',
+        receipt: 
+        { transactionHash: '0xbbfe9a68a10c03d02ec7c45f41305f10c00b1207321a6026135e7eced6ef7a9b',
+            transactionIndex: 0,
+            blockHash: '0x85f28e95c66a4665ee499c15fbcb458c39c28a91fd36f3b7c45ae216f7a9e8ac',
+            blockNumber: 164,
+            gasUsed: 45225,
+            cumulativeGasUsed: 45225,
+            contractAddress: null,
+            logs: [ [Object] ],
+            status: '0x01',
+            logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000200000000000000000000010000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000010000000002020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000001000000010000000000000000000000100000000000000000000000000000000000000' },
+        logs: 
+        [ { logIndex: 0,
+            transactionIndex: 0,
+            transactionHash: '0xbbfe9a68a10c03d02ec7c45f41305f10c00b1207321a6026135e7eced6ef7a9b',
+            blockHash: '0x85f28e95c66a4665ee499c15fbcb458c39c28a91fd36f3b7c45ae216f7a9e8ac',
+            blockNumber: 164,
+            address: '0xfa21e79ca2dfb3ab15469796069622903919159c',
+            type: 'mined',
+            event: 'Approval',
+            args: [Object] } ] }
+
+
+        truffle(development)> tokenInstance.allowance(web3.eth.accounts[0],web3.eth.accounts[1])
+        BigNumber { s: 1, e: 2, c: [ 100 ] }
+
+
+        truffle(development)> fromAccount=web3.eth.accounts[2]
+        '0xc5fdf4076b8f3a5357c5e395ab970b5b54098fef'
+
+
+        truffle(development)> toAccount=web3.eth.accounts[3]
+        '0x821aea9a577a9b44299b9c15c88cf3087f3b5544'
+
+
+        truffle(development)> spendAccount=web3.eth.accounts[4]
+        '0x0d1d4e623d10f9fba5db95830f7d3839406c6af2'
+
+
+        truffle(development)> tokenInstance.transfer(fromAccount,100,{from:accounts[0]}) 
+        ReferenceError: accounts is not defined
+
+
+        truffle(development)> tokenInstance.transfer(fromAccount,100,{from:web3.eth.accounts[0]})
+        { tx: '0xf3f00041a1e884a27e887167cb33badc12a5dadc6633a6f6c2d6c15ea85e0a6d',
+        receipt: 
+        { transactionHash: '0xf3f00041a1e884a27e887167cb33badc12a5dadc6633a6f6c2d6c15ea85e0a6d',
+            transactionIndex: 0,
+            blockHash: '0x44efc2b3b5221273e3f39ccc2cae734b9545022ab009b08dd5578147ab72ae62',
+            blockNumber: 165,
+            gasUsed: 51086,
+            cumulativeGasUsed: 51086,
+            contractAddress: null,
+            logs: [ [Object] ],
+            status: '0x01',
+            logsBloom: '0x00000000000000000000010000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000010000008000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000010000000002000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000010000000000000000000000000000001000000000000000000000000000000100000000000000000000000000000000000000' },
+        logs: 
+        [ { logIndex: 0,
+            transactionIndex: 0,
+            transactionHash: '0xf3f00041a1e884a27e887167cb33badc12a5dadc6633a6f6c2d6c15ea85e0a6d',
+            blockHash: '0x44efc2b3b5221273e3f39ccc2cae734b9545022ab009b08dd5578147ab72ae62',
+            blockNumber: 165,
+            address: '0xfa21e79ca2dfb3ab15469796069622903919159c',
+            type: 'mined',
+            event: 'Transfer',
+            args: [Object] } ] }
+
+
+        truffle(development)> tokenInstance.balanceOf(fromAccount)
+        BigNumber { s: 1, e: 2, c: [ 100 ] }
+
+
+        truffle(development)> tokenInstance.approve(spendAccount,10,{from:fromAccount})
+        { tx: '0x419c4d5a1970492ddb94e26fc02a167740ef092bcf0c64a84ed84a9e6f91d84a',
+        receipt: 
+        { transactionHash: '0x419c4d5a1970492ddb94e26fc02a167740ef092bcf0c64a84ed84a9e6f91d84a',
+            transactionIndex: 0,
+            blockHash: '0x9f290efb1d1ee433a61e13126a05d8b920f2b1431082f0810ee6538a662d8f0f',
+            blockNumber: 166,
+            gasUsed: 45225,
+            cumulativeGasUsed: 45225,
+            contractAddress: null,
+            logs: [ [Object] ],
+            status: '0x01',
+            logsBloom: '0x00000000000000000000010000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000020000000000000000000000000000000000000000000000000000002000000000040000000000000000000000010000000000000000000000000000001000000010000000000000000000000100000000000000000000000000000000000000' },
+        logs: 
+        [ { logIndex: 0,
+            transactionIndex: 0,
+            transactionHash: '0x419c4d5a1970492ddb94e26fc02a167740ef092bcf0c64a84ed84a9e6f91d84a',
+            blockHash: '0x9f290efb1d1ee433a61e13126a05d8b920f2b1431082f0810ee6538a662d8f0f',
+            blockNumber: 166,
+            address: '0xfa21e79ca2dfb3ab15469796069622903919159c',
+            type: 'mined',
+            event: 'Approval',
+            args: [Object] } ] }
+
+
+        truffle(development)> tokenInstance.transferFrom(fromAccount,toAccount,10,{from:spendAccount})
+        { tx: '0x4fc51abcb3ba8f68bbd37d9e90820cb26a8480beb06cc987e17a3be8cc8d55ac',
+        receipt: 
+        { transactionHash: '0x4fc51abcb3ba8f68bbd37d9e90820cb26a8480beb06cc987e17a3be8cc8d55ac',
+            transactionIndex: 0,
+            blockHash: '0x88724e6c2aecd6d97ff03dddef8d54b9a84170a4eee07267473b7401f4d085d8',
+            blockNumber: 167,
+            gasUsed: 43289,
+            cumulativeGasUsed: 43289,
+            contractAddress: null,
+            logs: [ [Object] ],
+            status: '0x01',
+            logsBloom: '0x00000000000000000000010000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000400000000000000000000008000000000000000000000080000000000000000800000000000000000000000000000000000000000000000000000010040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000010000000000000000000000000000001000000000000000000000000000000100000000000000000000000000000000000000' },
+        logs: 
+        [ { logIndex: 0,
+            transactionIndex: 0,
+            transactionHash: '0x4fc51abcb3ba8f68bbd37d9e90820cb26a8480beb06cc987e17a3be8cc8d55ac',
+            blockHash: '0x88724e6c2aecd6d97ff03dddef8d54b9a84170a4eee07267473b7401f4d085d8',
+            blockNumber: 167,
+            address: '0xfa21e79ca2dfb3ab15469796069622903919159c',
+            type: 'mined',
+            event: 'Transfer',
+            args: [Object] } ] }
+
+
+        truffle(development)> tokenInstance.balanceOf(fromAccount)
+        BigNumber { s: 1, e: 1, c: [ 90 ] }
+
+
+        truffle(development)> tokenInstance.balanceOf(toAccount)
+        BigNumber { s: 1, e: 1, c: [ 10 ] }
+
+
+        truffle(development)> tokenInstance.allowance(fromAccount,spendAccount)
+        BigNumber { s: 1, e: 0, c: [ 0 ] }

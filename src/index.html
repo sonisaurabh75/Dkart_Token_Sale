@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dkart Token ICO Sale</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .lds-circle {
+            display: inline-block;
+            width: 51px;
+            height: 51px;
+            margin: 6px;
+            border-radius: 50%;
+            background: rgb(70, 64, 64);
+            animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+        }
+        @keyframes lds-circle {
+          0%, 100% {
+            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+          }
+          0% {
+            transform: rotateY(0deg);
+            }
+          50% {
+            transform: rotateY(1800deg);
+            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+            }
+          100% {
+            transform: rotateY(3600deg);
+            }
+        }
+    </style>
+  </head>
+
+  <body>
+      
+    <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">TOKEN ICO SALE</a>
+              </div>
+            </div>
+        </nav>>
+
+        <div style="margin-top: 50px;">
+            <h1 class="text-center" style="color:#051f49">Dkart Token Sale</h1><hr/>
+            <div class="progress">
+                <div id="progress1"class="progress-bar progress-bar-success progress-bar-striped active" aria-valuemin="0" aria-valuemax="100">
+                </div>  
+                <div id="progress2"class="progress-bar progress-bar-warning progress-bar-striped active" aria-valuemin="0" aria-valuemax="100">
+                </div>
+                <div id="progress3"class="progress-bar progress-bar-danger progress-bar-striped active"  aria-valuemin="0" aria-valuemax="100">
+                </div>
+                <div id="progress4"class="progress-bar progress-bar-danger progress-bar-striped" ><span class="sale-end"></span>
+                </div>
+            </div><hr/>
+          <br>
+        </div>
+        
+        <center>
+            <div id="loader" class="lds-circle">
+            </div>
+        </center>
+
+        <div id="content" style="display: none;">
+<div class="row">
+          <div class="col-lg-4">                      
+              <div class="tokeninfo">
+                DKT Token<br><br>
+                Price : <span class="token-price"></span><br>
+                Total Supply : <span class="tokens-available"></span><br>
+                Tokens Sold : <span class="tokens-sold"></span>
+              </div>
+          </div>
+<div class="col-lg-4"></div>
+          <div class="col-lg-4 text-center media border p-3">
+              <img src="andrew.png" alt="Account" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+              <div class="media-body">
+                <h4><span class="dkt-balance"></span> DKT <small><i>tokens owned</i></small></h4>
+                <span class="accountAddress"></span>
+              </div>
+          </div>
+ </div>        
+ <div class="row" style="margin-top: 80px;">         <div class="col-lg-3"></div>
+          <div class="col-lg-6" id="content">
+              <form onSubmit="App.buyTokens(); return false;" role="form">
+                  <div class="form-group">
+                  <div class="input-group">
+                      <input id="numberOfTokens" class="form-control input-lg" type="number" name="number" value="1" min="1" pattern="[0-9]">
+                      </input>
+                      <span class="input-group-btn">
+                      <button type="submit" style="background-color:#051f49" class="btn btn-primary btn-lg">Buy Tokens</button>
+                      </span>
+                  </div>
+                  </div>
+              </form><br>
+          </div>
+          <div class="col-lg-3"></div>
+</div>
+
+        </div>
+    </div>
+
+                                            
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

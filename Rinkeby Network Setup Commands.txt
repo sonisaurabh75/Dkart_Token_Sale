@@ -1,0 +1,86 @@
+
+$ truffle console
+
+    truffle(development)> DkartTokenSale.deployed().then(function(i){tokenSale=i;})
+    undefined
+
+
+    truffle(development)> tokenSale
+
+
+    truffle(development)> DkartToken.deployed().then(function(i){token=i;})
+    undefined
+
+
+    truffle(development)> token
+    
+
+    truffle(development)> tokensAvailable=750000;
+    750000
+
+
+    truffle(development)> admin=web3.eth.accounts[0]
+    '0x627306090abab3a6e1400e9345bc60c78a8bef57'
+
+
+    truffle(development)> token.transfer(tokenSale.address,tokensAvailable,{from:admin})
+
+
+    truffle(development)> token.balanceOf(tokenSale.address)
+    BigNumber { s: 1, e: 5, c: [ 750000 ] }
+
+
+    truffle(development)> .exit
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+geth --rinkeby --rpc --rpcapi="personal,eth,network,web3,net" --ipcpath "~/Library/Ethereum/geth.ipc"
+
+--------------------------------------------------
+
+geth attach
+    eth.syncing
+
+--------------------------------------------------
+
+geth --rinkeby account new
+
+request ether  : https://faucet.rinkeby.io
+
+--------------------------------------------------
+
+geth attach
+
+    eth.accounts
+    eth.accounts[0]
+    eth.getBalance(eth.accounts[0])
+
+    personal.unlockAccount(eth.accounts[0],null,1200);
+
+--------------------------------------------------
+
+truffle migrate --reset --compile-all --network rinkeby
+
+ABI
+geth attach
+
+var admin=eth.accounts[0]
+var tokensAvailable=750000
+var tokenSaleAddress = " paste from DkartTokenSale.json --network -- address"
+var abi= [] 
+var tokenAddress= " DkartToken.json --network --address"
+var TokenContract =web3.eth.contract(abi)
+TokenContract
+tokenInstance=TokenContract.at(tokenAddress)
+tokenInstance. --function name
+tokenInstance.transfer(tokenSaleAddress,tokensAvailable,{from:admin})
+tokenInstance.balanceOf(--check balances)
+
+--------------------------------------------------
+
+~Library/Ethereum/rinkeby/keystore
+
+save as Keystore.json
+ 
